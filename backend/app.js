@@ -39,7 +39,7 @@ const options = { useUnifiedTopology: true, useNewUrlParser: true };
 mongoose
     .connect(uri, options)
     .then(() => {
-        app.listen(5000);
+        app.listen(process.env.PORT || 5000);
     })
     .catch(err => {
         console.log(err);
