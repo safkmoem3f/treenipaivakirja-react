@@ -1,5 +1,4 @@
 const express = require('express');
-const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
@@ -9,8 +8,6 @@ const results = require('./routes/result-routes');
 const app = express();
 
 app.use(bodyParser.json());
-
-app.all(cors())
 
 app.use('/user', userLogin);
 app.use('/result', results);
