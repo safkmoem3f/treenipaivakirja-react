@@ -10,7 +10,18 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.options('*', cors())
+var whitelist = ['https://treenipaivakirja.netlify.app', 'https://treenipaivakirja-backend.herokuapp.com']
+var corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
+
+app.use(cors(corsOptions))
 
 app.use('/user', userLogin);
 app.use('/result', results);
