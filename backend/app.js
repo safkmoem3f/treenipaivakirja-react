@@ -10,15 +10,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-/*app.options((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 
-    'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE');
-    next();
-});*/
-
-app.use(cors());
+app.options('*', cors())
 
 app.use('/user', userLogin);
 app.use('/result', results);
