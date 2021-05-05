@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
@@ -9,14 +10,15 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.options((req, res, next) => {
+/*app.options((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 
     'Origin, X-Requested-With, Content-Type, Accept, Authorization');
     res.header('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE');
     next();
-});
+});*/
 
+app.use(cors());
 
 app.use('/user', userLogin);
 app.use('/result', results);
