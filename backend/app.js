@@ -9,7 +9,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.all('*', function (req, res, next) {
+app.use((req, res, next) => {
     res.setheader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 
     'Origin, X-Requested-With, Content-Type, Accept, Authorization');
