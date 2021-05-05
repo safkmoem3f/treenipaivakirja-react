@@ -10,10 +10,10 @@ const app = express();
 app.use(bodyParser.json());
 
 app.options((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Headers', 
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 
     'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-    res.setHeader('Access-Control-Allow-Methos', 'GET, POST, PATCH, PUT, DELETE');
+    res.header('Access-Control-Allow-Methos', 'GET, POST, PATCH, PUT, DELETE');
     next();
 });
 
