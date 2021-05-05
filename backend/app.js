@@ -9,11 +9,11 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 
+app.options((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', 
     'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-    res.header('Access-Control-Allow-Methos', 'GET, POST, PATCH, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Methos', 'GET, POST, PATCH, PUT, DELETE');
     next();
 });
 
@@ -22,7 +22,7 @@ app.use('/user', userLogin);
 app.use('/result', results);
 
 app.use((req, res, next) => {
-    next(error);
+    return next(error);
 });
 
 app.use((error, req, res, next) => {
