@@ -2,8 +2,6 @@
 
 Sovellus johon sisäänkirjautunut käyttäjä voi lisätä omia treenejään, nähdä harrastajien, sekä ammattilaisena myös muiden ammattilaisten treenejä. 
 
-## Teknologiat
-
 ### Frontend
 - React
 - React Bootstrap
