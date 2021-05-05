@@ -6,7 +6,7 @@ const getAllPro = async () => {
     const config = {
         method: 'get',
         url: baseUrl + '/professionals',
-        headers: {'Access-Control-Allow-Origin': '*'}
+        headers: {'Origin': 'https://treenipaivakirja.netlify.app'}
     };
     try {
         let res = await axios(config);
@@ -21,7 +21,7 @@ const getAllAmateur = async () => {
     const config = {
         method: 'get',
         url: baseUrl + '/amateurs',
-        headers: {'Access-Control-Allow-Origin': '*'}
+        headers: {'Origin': 'https://treenipaivakirja.netlify.app'}
     };
     try {
         let res = await axios(config);
