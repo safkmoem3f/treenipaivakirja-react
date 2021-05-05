@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = 'http://localhost:5000/result';
+const baseUrl = 'https://treenipaivakirja-backend.herokuapp.com/result';
 
 const getAllPro = async () => {
     const config = {
