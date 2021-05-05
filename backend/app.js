@@ -10,7 +10,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-var whitelist = ['https://treenipaivakirja-backend.herokuapp.com/user', 'https://treenipaivakirja-backend.herokuapp.com/result']
+var whitelist = ['https://treenipaivakirja.netlify.app']
 var corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
