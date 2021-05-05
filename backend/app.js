@@ -9,6 +9,14 @@ const app = express();
 
 app.use(bodyParser.json());
 
+app.use(function (req, res, next) {
+    res.setheader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', 
+    'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+    res.setHeader('Access-Control-Allow-Methos', 'GET, POST, PATCH, PUT, DELETE');
+    next();
+});
+
 app.use('/user', userLogin);
 app.use('/result', results);
 

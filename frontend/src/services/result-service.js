@@ -5,8 +5,7 @@ const baseUrl = 'https://treenipaivakirja-backend.herokuapp.com/result';
 const getAllPro = async () => {
     const config = {
         method: 'get',
-        url: baseUrl + '/professionals',
-        headers: {'Origin': 'https://treenipaivakirja.netlify.app'}
+        url: baseUrl + '/professionals'
     };
     try {
         let res = await axios(config);
@@ -20,8 +19,7 @@ const getAllPro = async () => {
 const getAllAmateur = async () => {
     const config = {
         method: 'get',
-        url: baseUrl + '/amateurs',
-        headers: {'Origin': 'https://treenipaivakirja.netlify.app'}
+        url: baseUrl + '/amateurs'
     };
     try {
         let res = await axios(config);
@@ -35,8 +33,7 @@ const getAllAmateur = async () => {
 const getAllPersonal = async () => {
     const config = {
         method: 'get',
-        url: baseUrl,
-        headers: {'Access-Control-Allow-Origin': '*'}
+        url: baseUrl
     };
     try {
         let res = await axios(config);
@@ -51,7 +48,6 @@ const getPerson = async (user) => {
     const config = {
         method: 'post',
         url: baseUrl,
-        headers: {'Access-Control-Allow-Origin': '*'},
         data: user
     };
     try {
