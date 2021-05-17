@@ -1,4 +1,4 @@
-.github
-.vscode
+.github/
+.vscode/
 frontend/node_modules
 backend/node_modules
