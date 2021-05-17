@@ -1,11 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
 
 const userLogin = require('./routes/users-routes');
 const results = require('./routes/result-routes');
 
 const app = express();
+
+dotenv.config();
 
 app.use(bodyParser.json());
 
@@ -33,7 +36,7 @@ app.use((error, req, res, next) => {
     .send({message: error.message || 'Unknown error' });
 });
 
-const uri = "mongodb+srv://melinda:6sVHZopgGiTgdC7L@cluster0.utp8b.mongodb.net/React?retryWrites=true&w=majority";
+const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.utp8b.mongodb.net/React?retryWrites=true&w=majority`;
 const options = { useUnifiedTopology: true, useNewUrlParser: true };
 
 mongoose
